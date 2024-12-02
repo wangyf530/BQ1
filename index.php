@@ -102,8 +102,12 @@
 					var nowpage = 0, num = 0;
 					function pp(x) {
 						var s, t;
-						if (x == 1 && nowpage - 1 >= 0) { nowpage--; }
-						if (x == 2 && (nowpage + 1) * 3 <= num * 1 + 3) { nowpage++; }
+						if (x == 1 && nowpage - 1 >= 0) { 
+							nowpage--; 
+						}
+						if (x == 2 && (nowpage + 1) * 3 <= num * 1 + 3){
+							nowpage++; 
+						}
 						$(".im").hide()
 						for (s = 0; s <= 2; s++) {
 							t = s * 1 + nowpage * 1;
