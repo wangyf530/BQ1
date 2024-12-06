@@ -163,6 +163,7 @@ function to($url){
 
 // title
 $TITLE = new DB('titles');
+$AD = new DB('ads');
 
 
 ?>

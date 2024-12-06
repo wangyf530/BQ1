@@ -21,8 +21,26 @@
                         <td width="86%">動態文字廣告</td>
                         <td width="7%">顯示</td>
                         <td width="7%">刪除</td>
-                        <td></td>
                     </tr>
+                    <?php
+                        $rows = $AD -> all();
+                        foreach ($rows as $row) {
+                    ?>
+                    <tr>
+                        <td> 
+                            <input type="text" name="text[]" value="<?=$row['text'];?>">    
+                        </td>
+                        <td>  
+                            <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
+                        </td>
+                        <td>  
+                            <input type="checkbox" name="del[]" value="<?=$row['id'];?>"> 
+                        </td>
+                        <input type="hidden" name="id[]" value="<?=$row['id'];?>">
+                    </tr>
+                    <?php
+                        }
+                    ?>
                 </tbody>
             </table>
             <table style="margin-top:40px; width:70%;">
