@@ -23,7 +23,7 @@ class DB{
         if(!empty($arg[0])){
             // 是否是陣列
             if (is_array($arg[0])){
-                $where = $this -> a2s($arg[0]);
+                $where = $this->a2s($arg[0]);
                 $sql = $sql . " WHERE " . join(" && ",$where);
             } else {
                 // $sql = $sql.$arg[0];
@@ -36,11 +36,11 @@ class DB{
             $sql = $sql . $arg[1];
         }
         // return $this -> q("SELECT * FROM $this->table");
-        return $this -> fetchALL($sql);
+        return $this->fetchALL($sql);
     }
 
     function find($id){
-        $sql = "SELECT * FROM $this -> table ";
+        $sql = "SELECT * FROM $this->table ";
 
         if(is_array($id)){
             $where = $this->a2s($id);
@@ -48,8 +48,7 @@ class DB{
         } else {
             $sql .= " WHERE `id` = '$id' ";
         }
-        echo $sql;
-        return $this -> fetchOne($sql);
+        return $this->fetchOne($sql);
     }
 
     function save($array){
@@ -59,7 +58,7 @@ class DB{
             $id = $array['id'];
             unset($array['id']);
             $set = $this -> a2s($array);
-            $sql = "UPDATE $this->table SET " . join(",",$set) . " WHERE `id` = '{$array['id']}'";
+            $sql = "UPDATE $this->table SET " . join(",",$set) . " WHERE `id` = '$id'";
         } else {
             // insert
             $cols = array_keys($array);
@@ -67,7 +66,7 @@ class DB{
             $sql = "INSERT INTO $this->table (`" . join("`,`",$cols) . "`) VALUES ('" . join("','",$array) . "')";
         }
         dd($array);
-        echo $sql;
+        // echo $sql;
         return $this->pdo->exec($sql);
     }
 
@@ -149,7 +148,7 @@ class DB{
 // 最萬用的 但要打sql語法
 function q($sql){
     $pdo = new PDO("mysql:host=localhost; charset=utf8; dbname=db10",'root','');
-    return $this -> pdo -> query($sql) -> fetchAll();
+    return pdo -> query($sql) -> fetchAll();
 }
 
 function dd($array){

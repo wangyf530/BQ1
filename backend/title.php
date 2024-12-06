@@ -24,8 +24,34 @@
                         <td width="7%">刪除</td>
                         <td></td>
                     </tr>
+                    <?php
+                        $rows = $TITLE -> all();
+                        foreach ($rows as $row) {
+                    ?>
+                    <tr>
+                        <td> 
+                            <img src="./upload/<?=$row['img'];?>" style="widh:300px; height:30px"> 
+                        </td>
+                        <td> 
+                            <input type="text" name="text[]" value="<?=$row['text'];?>">    
+                        </td>
+                        <td>  
+                            <input type="radio" name="sh" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
+                        </td>
+                        <td>  
+                            <input type="checkbox" name="del[]" value="<?=$row['id'];?>"> 
+                        </td>
+                        <td>
+                            <input type="button" value="更新圖片">
+                        </td>
+                        <input type="hidden" name="id[]" value="<?=$row['id'];?>">
+                    </tr>
+                    <?php
+                        }
+                    ?>
                 </tbody>
             </table>
+
             <table style="margin-top:40px; width:70%;">
                 <tbody>
                     <tr>
