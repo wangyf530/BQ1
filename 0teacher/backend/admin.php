@@ -5,50 +5,40 @@
         <tbody>
             <tr>
                 <td style="width:70%;font-weight:800; border:#333 1px solid; border-radius:3px;" class="cent"><a
-                        href="?do=admin" style="color:#000; text-decoration:none;">後台管理區</a>
-                </td>
+                        href="?do=admin" style="color:#000; text-decoration:none;">後台管理區</a></td>
                 <td><button onclick="document.cookie=&#39;user=&#39;;location.replace(&#39;?&#39;)"
                         style="width:99%; margin-right:2px; height:50px;">管理登出</button></td>
             </tr>
         </tbody>
     </table>
     <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-        <p class="t cent botli">網站標題管理</p>
-        <!-- <form method="post" action="./api/edit_<?=$do;?>.php"> -->
+        <p class="t cent botli">管理者帳號管理</p>
         <form method="post" action="./api/edit.php">
             <table width="100%">
                 <tbody>
                     <tr class="yel">
-                        <td width="45%">網站標題</td>
-                        <td width="23%">替代文字</td>
-                        <td width="7%">顯示</td>
-                        <td width="7%">刪除</td>
-                        <td></td>
+                        <td width="45%">帳號</td>
+                        <td width="45%">密碼</td>
+                        <td width="10%">刪除</td>
                     </tr>
                     <?php
-                        $rows = $TITLE -> all();
-                        foreach ($rows as $row) {
+                    $rows=$Admin->all();
+                    foreach($rows as $row){
                     ?>
                     <tr>
-                        <td> 
-                            <img src="./upload/<?=$row['img'];?>" style="width:300px; height:30px;"> 
-                        </td>
-                        <td> 
-                            <input type="text" name="text[]" value="<?=$row['text'];?>">    
-                        </td>
-                        <td>  
-                            <input type="radio" name="sh" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
-                        </td>
-                        <td>  
-                            <input type="checkbox" name="del[]" value="<?=$row['id'];?>"> 
+                        <td>
+                            <input type="text" name="acc[]" value="<?=$row['acc'];?>">    
                         </td>
                         <td>
-                        <input type="button" onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/upload_<?=$do;?>.php?id=<?=$row['id'];?>&#39;)" value="更新圖片">
+                            <input type="text" name="pw[]" value="<?=$row['pw'];?>">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="del[]" value="<?=$row['id'];?>">
                         </td>
                         <input type="hidden" name="id[]" value="<?=$row['id'];?>">
                     </tr>
                     <?php
-                        }
+                    }
                     ?>
                 </tbody>
             </table>
@@ -58,7 +48,7 @@
                         <td width="200px">
                             <input type="button"
                                 onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/<?=$do;?>.php?table=<?=$do;?>&#39;)"
-                                value="新增網站標題圖片"></td>
+                                value="新增管理者帳號"></td>
                         <td class="cent">
                             <input type="hidden" name="table" value="<?=$do;?>">
                             <input type="submit" value="修改確定">
@@ -71,3 +61,5 @@
         </form>
     </div>
 </div>
+
+

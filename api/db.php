@@ -166,6 +166,8 @@ $TITLE = new DB('titles');
 $AD = new DB('ads');
 $MVIM = new DB('mvims');
 $IMAGE = new DB('images');
+$NEWS = new DB('news');
+$ADMIN = new DB('admin');
 
 
 ?>

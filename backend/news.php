@@ -13,37 +13,32 @@
         </tbody>
     </table>
     <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-        <p class="t cent botli">網站標題管理</p>
+        <p class="t cent botli">最新消息資料內容管理</p>
         <!-- <form method="post" action="./api/edit_<?=$do;?>.php"> -->
         <form method="post" action="./api/edit.php">
             <table width="100%">
                 <tbody>
                     <tr class="yel">
-                        <td width="45%">網站標題</td>
-                        <td width="23%">替代文字</td>
+                        <td width="86%">最新消息資料管理</td>
                         <td width="7%">顯示</td>
                         <td width="7%">刪除</td>
-                        <td></td>
                     </tr>
                     <?php
-                        $rows = $TITLE -> all();
+                        /* $db=strtoupper($do);
+                        echo $db;                        $rows = $db -> all(); */
+                        $rows = $NEWS -> all();
                         foreach ($rows as $row) {
                     ?>
                     <tr>
                         <td> 
-                            <img src="./upload/<?=$row['img'];?>" style="width:300px; height:30px;"> 
-                        </td>
-                        <td> 
-                            <input type="text" name="text[]" value="<?=$row['text'];?>">    
+                            <!-- 不能斷行要不然會有空格 -->
+                            <textarea name="text[]" style="width:95%;height:60px"><?=$row['text'];?></textarea>
                         </td>
                         <td>  
-                            <input type="radio" name="sh" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
+                            <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
                         </td>
                         <td>  
                             <input type="checkbox" name="del[]" value="<?=$row['id'];?>"> 
-                        </td>
-                        <td>
-                        <input type="button" onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/upload_<?=$do;?>.php?id=<?=$row['id'];?>&#39;)" value="更新圖片">
                         </td>
                         <input type="hidden" name="id[]" value="<?=$row['id'];?>">
                     </tr>
@@ -55,10 +50,9 @@
             <table style="margin-top:40px; width:70%;">
                 <tbody>
                     <tr>
-                        <td width="200px">
-                            <input type="button"
+                        <td width="200px"><input type="button"
                                 onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/<?=$do;?>.php?table=<?=$do;?>&#39;)"
-                                value="新增網站標題圖片"></td>
+                                value="新增最新消息資料"></td>
                         <td class="cent">
                             <input type="hidden" name="table" value="<?=$do;?>">
                             <input type="submit" value="修改確定">

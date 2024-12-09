@@ -15,7 +15,7 @@
     }
     unset($_POST['table']);
 
-    $$db -> save($_POST);
+    $$db->save($_POST);
     to("../admin.php?do=$table");
 
 ?>
