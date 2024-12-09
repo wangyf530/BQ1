@@ -102,12 +102,12 @@ class DB{
      */
     protected function fetchOne($sql){
         // echo $sql 看對不對
-        return $this -> pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+        return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
     
     protected function fetchAll($sql){
         // echo $sql 看對不對
-        return $this -> pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+        return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
     }
 
