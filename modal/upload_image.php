@@ -1,7 +1,7 @@
 <h3 class="cent">更新校園映像</h3>
 <hr>
 <form action="api/update.php" method="post" enctype="multipart/form-data">
-    <table>
+    <table style="margin:auto;">
         <tr>
             <td>校園映像圖片：</td>
             <td><input type="file" name="img" id="img"></td>

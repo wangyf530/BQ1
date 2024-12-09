@@ -1,7 +1,7 @@
 <h3 class="cent">新增最新消息資料</h3>
 <hr>
 <form action="api/insert.php" method="post" enctype="multipart/form-data">
-    <table>
+    <table style="margin:auto;">
         <tr>
             <td>新增最新消息資料：</td>
             <td><textarea name="text" style="width:300px; height=100px;"></textarea></td>

@@ -19,9 +19,9 @@
             <table width="100%">
                 <tbody>
                     <tr class="yel">
-                        <td width="45%">動畫圖片</td>
-                        <td width="7%">顯示</td>
-                        <td width="7%">刪除</td>
+                        <td width="50%">動畫圖片</td>
+                        <td width="10%">顯示</td>
+                        <td width="10%">刪除</td>
                         <td></td>
                     </tr>
                     <?php
@@ -30,7 +30,7 @@
                     ?>
                     <tr>
                         <td> 
-                            <img src="./upload/<?=$row['img'];?>" style="widh:120px; height:80px"> 
+                            <img src="./upload/<?=$row['img'];?>" style="width:120px; height:80px"> 
                         </td>
                         <td>  
                             <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>

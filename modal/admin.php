@@ -1,7 +1,7 @@
 <h3 class="cent">新增管理者帳號</h3>
 <hr>
 <form action="api/insert.php" method="post" enctype="multipart/form-data">
-    <table>
+    <table style="margin:auto;">
         <tr>
             <td>帳號：</td>
             <td><input type="text" name="acc" id="acc"></td>

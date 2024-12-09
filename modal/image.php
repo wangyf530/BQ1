@@ -1,7 +1,7 @@
 <h3 class="cent">新增動態文字廣告管理</h3>
 <hr>
 <form action="api/insert.php" method="post" enctype="multipart/form-data">
-    <table>
+    <table style="margin:auto;">
         <tr>
             <td>校園映像圖片：</td>
             <td><input type="file" name="img" id="img"></td>

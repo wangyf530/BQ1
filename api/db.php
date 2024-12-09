@@ -139,7 +139,7 @@ class DB{
             $tmp = $this->a2s($where);
             $sql = $sql . " WHERE " . join(" && ", $tmp);
         }
-        echo $sql."<br>";
+        // echo $sql."<br>";
         // return $this->pdo->query($sql)->fetch();
         return $this->pdo->query($sql)->fetchColumn();
     }

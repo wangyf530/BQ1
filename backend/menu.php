@@ -27,7 +27,7 @@
                         <td width="15%"></td>
                     </tr>
                     <?php
-                        $rows = $MENU -> all();
+                        $rows = $MENU -> all(['main_id'=>0]);
                         foreach ($rows as $row) {
                     ?>
                     <tr>
@@ -38,7 +38,7 @@
                             <input type="text" name="href[]" value="<?=$row['href'];?>">    
                         </td>
                         <td> 
-                            <!-- <input type="number" name="main_id" value="<?=$row['main_id'];?>">     -->
+                            <?=$MENU->count(['main_id'=>$row['id']]);?>
                         </td>
                         <td>  
                             <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>

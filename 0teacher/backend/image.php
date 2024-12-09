@@ -24,12 +24,12 @@
                     </tr>
                     <?php
                     $div=3;
-                    $total=$IMAGE->count();
+                    $total=$Image->count();
                     $pages=ceil($total/$div);
                     $now=$_GET['p']??1;
                     $start=($now-1)*$div;
 
-                    $rows=$IMAGE->all(" limit $start,$div");
+                    $rows=$Image->all(" limit $start,$div");
                     foreach($rows as $row){
                     ?>
                     <tr>

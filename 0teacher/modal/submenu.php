@@ -1,18 +1,19 @@
-<?php 
-include_once "../api/db.php"; 
-$rows = $MENU->all(['main_id' => $_GET['id']]);
+<?php include_once "../api/db.php";
+
+$rows=$Menu->all(['main_id'=>$_GET['id']]);
+
 ?>
 <h3 class="cent">編輯次選單</h3>
 <hr>
-<form action="api/submenu.php" method="post" enctype="multipart/form-data">
-    <table style="width:60%;margin:auto;" id="menu">
+<form action="api/submenu.php" method="post" enctype="multipart/form-data" class='cent'>
+    <table style="width:70%;margin:auto" id="menu">
         <tr>
             <td>次選單名稱：</td>
             <td>次選單連結網址：</td>
             <td>刪除</td>
         </tr>
-        <?php
-        foreach ($rows as $row) {
+        <?php 
+        foreach($rows as $row){
         ?>
         <tr>
             <td><input type="text" name="text[]" value="<?=$row['text'];?>"></td>
@@ -20,8 +21,8 @@ $rows = $MENU->all(['main_id' => $_GET['id']]);
             <td><input type="checkbox" name="del[]" value="<?=$row['id'];?>"></td>
         </tr>
         <input type="hidden" name="id[]" value="<?=$row['id'];?>">
-        <?php
-            }
+        <?php 
+        }
         ?>
     </table>
     <div class="cent">
@@ -34,14 +35,13 @@ $rows = $MENU->all(['main_id' => $_GET['id']]);
 
 <script>
     
-    
-    function more(){
-        let row = `<tr>
-        <td><input type="text" name="text2[]" id="text"></td>
-        <td><input type="text" name="href2[]" id="href"></td>
-        <td></td>
-        </tr>`;
-        $('#menu').append(row);
-    }
-    
+
+function more(){
+    let row=`<tr>
+                <td><input type="text" name="text2[]" id="text"></td>
+                <td><input type="text" name="href2[]" id="href"></td>
+                <td></td>
+             </tr>`
+     $("#menu").append(row);
+}        
 </script>
