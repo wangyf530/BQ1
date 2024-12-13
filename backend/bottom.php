@@ -13,19 +13,19 @@
         </tbody>
     </table>
     <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-        <p class="t cent botli">進站總人數管理</p>
+        <p class="t cent botli">頁尾版權資料管理</p>
         <form action="api/update_data.php" method="post" enctype="multipart/form-data">
             <table style="margin:auto;">
-                <tr class="yel">
-                    <td>進站總人數：</td>
+                <tr>
+                    <td class="yel">頁尾版權資料：</td>
                     <?php
-                        $row=$TOTAL->find(1);
+                        $row=$BOTTOM->find(1);
                     ?>
-                    <td style="background-color:unset"><input type="number" name="total" value="<?=$row['total'];?>"></td>
+                    <td><input type="text" name="bottom" value="<?=$row['bottom'];?>"></td>
                 </tr>
             </table>
             <div class="cent">
-                <input type="hidden" name="table" value="total">
+                <input type="hidden" name="table" value="bottom">
                 <input type="submit" value="修改確定">
                 <input type="reset" value="重置">
             </div>
