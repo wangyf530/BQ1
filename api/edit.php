@@ -18,7 +18,8 @@
                 $row = $$db->find($id);
                 switch($table){
                     case "title":
-                        $row['sh']=(isset($_POST['sh']) && $_POST['sh']==$id)?1:0;
+                        // $row['sh']=(isset($_POST['sh']) && $_POST['sh']==$id)?1:0;
+                        $row['sh']=(isset($_POST['sh']) && in_array($id, $_POST['sh']))?1:0;
                         $row['text']=$_POST['text'][$idx];
                         break;
                     case "admin":

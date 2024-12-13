@@ -169,6 +169,8 @@ $IMAGE = new DB('images');
 $NEWS = new DB('news');
 $ADMIN = new DB('admin');
 $MENU = new DB('menus');
+$TOTAL = new DB('total');
+$BOTTOM = new DB('bottom');
 
 
 ?>
