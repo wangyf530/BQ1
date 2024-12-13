@@ -1,4 +1,4 @@
-<?php include_once "api/db.php" ?>
+<?php include_once "api/db.php";?>
 <!DOCTYPE html
 	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0040)http://127.0.0.1/test/exercise/collage/? -->
@@ -21,7 +21,7 @@
 			<div id="cvr" style="position:absolute; width:99%; height:100%; margin:auto; z-index:9898;"></div>
 		</div>
 	</div>
-	<iframe style="display:none;" name="back" id="back"></iframe>
+	<!-- <iframe style="display:none;" name="back" id="back"></iframe> -->
 	<div id="main">
 		<a title="<?=$TITLE->find(['sh'=>1])['text'];?>" href="index.php">
 			
@@ -38,7 +38,6 @@
 					<span class="t">進站總人數 : <?=$TOTAL->find(1)['total'];?></span>
 				</div>
 			</div>
-		</div>
 		<?php
 			// include "./front/main.php";
 			// include "./front/login.php";

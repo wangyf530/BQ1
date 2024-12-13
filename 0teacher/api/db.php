@@ -1,7 +1,7 @@
 <?php
 
 class DB{
-    protected $dsn="mysql:host=localhost;charset=utf8;dbname=db10";
+    protected $dsn="mysql:host=localhost;charset=utf8;dbname=db05";
     protected $pdo;
     protected $table;
 
