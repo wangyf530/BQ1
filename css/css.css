@@ -97,6 +97,14 @@ body {
 	background-size: cover;
 }
 
+.mw{
+	position:absolute;
+	left:120px;
+	top:20px;
+	width: 200px;
+	z-index: 99;
+}
+
 #lf {
 	height: 540px;
 	width: 21%;

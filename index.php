@@ -40,6 +40,19 @@
 								echo "<a href='{$main['href']}'>";
 								echo $main['text'];
 								echo "</a>";
+								echo "<div class='mw' style='display:none;'>";
+								// 判斷有沒有次選單
+								if($MENU->count(['main_id'=>$main['id']])>0){
+									$subs = $MENU->all(['main_id'=>$main['id']]);
+									foreach ($subs as $sub) {
+										echo "<div class='mainmu2 cent'>";
+										echo "<a href='{$sub['href']}'>";
+										echo $sub['text'];
+										echo "</a>";
+										echo "</div>";
+									}
+								}
+								echo "</div>";
 								echo "</div>";
 							}
 						?>
@@ -108,20 +121,20 @@
 				onclick="lo(&#39;?do=admin&#39;)">管理登入</button>
 			<div style="width:89%; height:480px;" class="dbor">
 				<span class="t botli">校園映象區</span>
-				<div class="cent" id='up' onclick="pp(1)">
+				<div class="cent" id='up' onclick="pp(1)" style="margin:10px 0px;">
 					<img src="./icon/up.jpg" alt="">
 				</div>
 				<div class="cent">
 					<?php
 						$imgs=$IMAGE->all(['sh'=>1]);
 						foreach ($imgs as $idx => $img) {
-							echo "<div> class='im' id='ssaa{$idx}'>";
+							echo "<div class='im' id='ssaa{$idx}'>";
 							echo "<img src='./upload/{$img['img']}' alt='' style='width:150px;height:103px;border:3px solid orange;'>";
 							echo "</div>";
 						}
 					?>
 				</div>
-				<div class="cent" id='dn' onclick="pp(2)">
+				<div class="cent" id='dn' onclick="pp(2)" style="margin-top:10px;">
 					<img src="./icon/dn.jpg" alt="">
 				</div>
 
