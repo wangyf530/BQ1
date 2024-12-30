@@ -1,5 +1,5 @@
 ﻿<?php include_once "api/db.php"; 
-session_start();
+// session_start();
 	// if($_SESSION['login']!=1){
 	if(!isset($_SESSION['login'])){
 		echo "請從登入頁登入 <a href='index.php'>管理登入</a>";

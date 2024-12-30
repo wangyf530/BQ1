@@ -1,7 +1,7 @@
 <?php
-
+session_start();
 class DB{
-    protected $dsn = "mysql:host=localhost; charset=utf8; dbname=db05";
+    protected $dsn = "mysql:host=localhost; charset=utf8; dbname=db10";
     protected $pdo;
     protected $table;
 
@@ -172,5 +172,15 @@ $MENU = new DB('menus');
 $TOTAL = new DB('total');
 $BOTTOM = new DB('bottom');
 
+if(!isset($_SESSION['view'])){
+    // echo "hi thanks for your first visit";
+    $_SESSION['view']=1;
+    // db+1
+    $total = $TOTAL->find(1);
+    $total['total'] ++;
+    $TOTAL->save($total);
+} else {
+    // echo "h i thanks for your revisit";
+}
 
 ?>
